@@ -1,9 +1,9 @@
 import numpy as np
 
 # Importing from local directory
-from functions import load_data, preprocess_data, initialize_network, compute_accuracy
-from optimizers import optimizers
-from propagation import forward_propagation, backpropagation
+from src.functions import load_data, preprocess_data, initialize_network, compute_accuracy
+from src.optimizers import optimizers
+from src.propagation import forward_propagation, backpropagation
 
 
 # Training Function
