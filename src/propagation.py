@@ -1,5 +1,5 @@
 import numpy as np
-from activation import activation_fn, activation_derivative  
+from src.activation import activation_fn, activation_derivative  
 
 def forward_propagation(x, weights, biases, activation):
     """

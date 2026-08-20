@@ -31,7 +31,7 @@ def train_network(x_train, y_train, x_val, y_val, layer_sizes, optimizer_name, e
     return weights, biases
 
 # Loading and Preprocessing Fashion-MNIST Dataset
-(x_train, y_train), (x_test, y_test) = load_data('fashion-mnist.npz')
+(x_train, y_train), (x_test, y_test) = load_data('Data/fashion_mnist.npz')
 x_train, y_train = preprocess_data(x_train, y_train)
 x_test, y_test = preprocess_data(x_test, y_test)
 

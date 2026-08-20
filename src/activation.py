@@ -1,5 +1,5 @@
 import numpy as np
-from alpha_fractal_function import alpha_fractalize_second_derivative, alpha_fractalize_first_derivative, alpha_fractalize
+from src.alpha_fractal_function import alpha_fractalize_second_derivative, alpha_fractalize_first_derivative, alpha_fractalize
 
 def activation_fn(z, fn):
     """Applies the activation function."""

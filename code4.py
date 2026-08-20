@@ -2,10 +2,10 @@ import numpy as np
 import wandb
 
 # Importing from local directory
-from functions import load_data, preprocess_data, initialize_network, compute_accuracy
-from optimizers import optimizers
-from sweep_config import sweep_config
-from propagation import forward_propagation, backpropagation
+from src.functions import load_data, preprocess_data, initialize_network, compute_accuracy
+from src.optimizers import optimizers
+from src.sweep_config import sweep_config
+from src.propagation import forward_propagation, backpropagation
 
 
 
@@ -20,7 +20,7 @@ def train():
     wandb.run.save()
 
     # Loading and preprocessing dataset
-    (x_train, y_train), (x_test, y_test) = load_data('fashion-mnist.npz')
+    (x_train, y_train), (x_test, y_test) = load_data('Data/fashion_mnist.npz')
     x_train, y_train = preprocess_data(x_train, y_train)
     x_test, y_test = preprocess_data(x_test, y_test)
 

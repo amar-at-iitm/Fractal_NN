@@ -1,6 +1,6 @@
 import numpy as np 
 # from tensorflow.keras.datasets import fashion_mnist
-# from propagation import forward_propagation
+from src.propagation import forward_propagation
 
 
 def load_data(filepath):

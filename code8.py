@@ -2,10 +2,10 @@ import numpy as np
 import wandb
 
 # Importing from local directory
-from optimizers import optimizers
-from sweep_config import sweep_config  
-from propagation import forward_propagation, backpropagation
-from functions import load_data, preprocess_data, initialize_network
+from src.optimizers import optimizers
+from src.sweep_config import sweep_config  
+from src.propagation import forward_propagation, backpropagation
+from src.functions import load_data, preprocess_data, initialize_network
 
 # Compute Loss Function
 def compute_loss(y_true, y_pred, loss_type):
