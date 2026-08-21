@@ -1,4 +1,15 @@
 import numpy as np 
+def pointwise_fractal(z, fractal_dd):
+    p = fractal_dd["partition"]
+    z_arr = np.asarray(z)
+
+    if np.any(z_arr < p[0]) or np.any(z_arr > p[-1]):
+        raise ValueError(
+            f"Point {z} outside interpolation domain [{p[0]}, {p[-1]}]"
+        )
+
+    return np.interp(z, p, fractal_dd["values"])
+
 
 def alpha_fractalize_first_derivative(f1, g1, a, b, n_sub, in_alpha, n_iter, dict=True):
 

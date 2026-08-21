@@ -7,7 +7,7 @@ from src.propagation import forward_propagation, backpropagation
 
 
 # Training Function
-def train_network(x_train, y_train, x_val, y_val, layer_sizes, optimizer_name, epochs=10, batch_size=32, learning_rate=0.01):
+def train_network(x_train, y_train, x_val, y_val, layer_sizes, optimizer_name, epochs=30, batch_size=32, learning_rate=0.01):
     weights, biases = initialize_network(layer_sizes)
     optimizer = optimizers[optimizer_name](learning_rate)
     

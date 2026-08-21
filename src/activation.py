@@ -10,7 +10,9 @@ def activation_fn(z, fn):
     elif fn == "tanh":
         return np.tanh(z)
     elif fn == "softmax":
-        return softmax(z)  
+        return softmax(z) 
+    elif fn == "alpha_fractal": 
+        return z
     else:
         raise ValueError("Unsupported activation function")
     
