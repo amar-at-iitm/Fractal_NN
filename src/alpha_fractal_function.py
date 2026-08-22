@@ -177,12 +177,16 @@ def alpha_fractalize(f, g, a, b, n_sub, in_alpha, n_iter, dict=True):
     Y = f(X)
     G = g(X)
 
-    print(f"f(-1) = {Y[0]}, f(1) = {Y[-1]}")
-    print(f"g(-1) = {G[0]}, g(1) = {G[-1]}")
-    if G[0] != Y[0] or G[-1] != Y[-1]:
+    print(f"f({a}) = {Y[0]}, f({b}) = {Y[-1]}")
+    print(f"g({a}) = {G[0]}, g({b}) = {G[-1]}")
+
+    if not np.isclose(G[0], Y[0], atol=1e-10) or not np.isclose(G[-1], Y[-1], atol=1e-10):
+        print("Boundary condition mismatch!")
+        print(f"|g({a}) - f({a})| = {np.abs(G[0] - Y[0]):.2e}")
+        print(f"|g({b}) - f({b})| = {np.abs(G[-1] - Y[-1]):.2e}")
         raise ValueError("The boundary conditions of g must match those of f.")
 
-    N = len(X) - 1
+    N = len(X) - 1  
     if np.isscalar(in_alpha):
         alpha = np.full(N, in_alpha, dtype=float)
     else:
